@@ -42,12 +42,17 @@ export const getUser = async (email) => {
  * @param {object} movie - Filmobjektet att lägga till i användarens favoriter
  */
 export const addFavorite = async (email, movie) => {
-  // Referens till en användares favoritfilmler i Firestore
   const userFavoritesRef = db.collection('users').doc(email).collection('favorites');
-  
+
+  // Kontrollera att betyg är inkluderat
+  if (!movie.rating) {
+    throw new Error('Rating is required to add a movie to favorites.');
+  }
+
   // Lägger till eller uppdaterar filmen i användarens favoritsamling baserat på filmens id
   await userFavoritesRef.doc(String(movie.id)).set(movie);
 };
+
 
 /**
  * Funktion för att hämta alla favoritfilmer för en användare
@@ -63,4 +68,32 @@ export const getFavorites = async (email) => {
   
   // Returnerar en array av films data (ej dokument-objekt) från snapshot
   return snapshot.docs.map(doc => doc.data());
+};
+
+/**
+ * Funktion för att ta bort en favoritfilm för användaren
+ * @param {string} email - Användarens e-postadress
+ * @param {number} id - ID för filmen som ska tas bort
+ */
+export const removeFavorite = async (email, id) => {
+  try {
+    // Referens till användarens favoritsamling
+    const userFavoritesRef = db.collection('users').doc(email).collection('favorites');
+    
+    // Hämtar alla filmer och letar efter filmen som har rätt ID
+    const snapshot = await userFavoritesRef.where('id', '==', id).get();
+
+    if (snapshot.empty) {
+      throw new Error(`Movie with ID ${id} not found.`);
+    }
+
+    // Tar bort varje matchande dokument (även om det bara borde finnas ett)
+    snapshot.forEach(async (doc) => {
+      await userFavoritesRef.doc(doc.id).delete();
+      console.log(`Movie with ID ${id} removed from favorites.`);
+    });
+  } catch (error) {
+    console.error('Error removing favorite movie:', error);
+    throw new Error('Error removing movie from favorites: ' + error.message);
+  }
 };
