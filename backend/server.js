@@ -5,10 +5,20 @@ import jwt from 'jsonwebtoken'; // JSON Web Token för autentisering
 import fetch from 'node-fetch'; // För att göra HTTP-förfrågningar till externa API:er (nödvändigt om Node.js är <18, men i version 18+ finns fetch globalt)
 import { addUser, getUser, addFavorite, getFavorites, removeFavorite } from './database.js'; // Import av funktioner som interagerar med Firestore
 
+import cors from 'cors';
+
+
 const app = express(); // Skapar en Express-applikation
 const PORT = 3000; // Anger portnumret för servern
 const JWT_SECRET = 'your_jwt_secret'; // En hemlig nyckel för att signera och verifiera JWT-token
 const YOUTUBE_API_KEY = 'AIzaSyCOjxpoEYTg1u4XqmclXFQ2mavuS7VZy1M';
+
+// Tillåt förfrågningar från localhost:3001
+app.use(cors({
+  origin: 'http://localhost:3001', // Eller '*', om du vill tillåta från alla ursprung
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 app.use(express.json()); // Middleware som gör att Express kan läsa JSON i inkommande förfrågningar
 
