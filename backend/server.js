@@ -11,7 +11,7 @@ import cors from 'cors';
 const app = express(); // Skapar en Express-applikation
 const PORT = 3000; // Anger portnumret för servern
 const JWT_SECRET = 'your_jwt_secret'; // En hemlig nyckel för att signera och verifiera JWT-token
-const YOUTUBE_API_KEY = 'AIzaSyCOjxpoEYTg1u4XqmclXFQ2mavuS7VZy1M';
+const YOUTUBE_API_KEY = 'AIzaSyChYiKzIRedPNd5Uzzd-VeFSoRtNs_MZ8Y';
 
 // Tillåt förfrågningar från localhost:3001
 app.use(cors({
@@ -86,6 +86,7 @@ app.get('/movies/search', async (req, res) => {
       movies.map(async (movie) => {
         try {
           const youtubeResponse = await fetch(
+            
             `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&key=${YOUTUBE_API_KEY}&q=${encodeURIComponent(
               movie.title + ' trailer'
             )}`

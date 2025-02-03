@@ -6,31 +6,32 @@ const Login = ({ onLoginSuccess }) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
+  const handleLogin = async () => {
     try {
       const response = await axios.post('http://localhost:3000/login', { email, password });
-      const { token } = response.data;
-      localStorage.setItem('token', token); // Spara token i localStorage
-      onLoginSuccess(token);
+      const token = response.data.token;
+      onLoginSuccess(token); // Uppdatera token i App
     } catch (err) {
-      setError('Error logging in: ' + err.response?.data || err.message);
+      setError('Invalid login credentials');
     }
   };
 
   return (
     <div>
       <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Email:</label>
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <br />
-        <label>Password:</label>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        <br />
-        <button type="submit">Login</button>
-      </form>
+      <input 
+        type="email" 
+        placeholder="Email" 
+        value={email} 
+        onChange={(e) => setEmail(e.target.value)} 
+      />
+      <input 
+        type="password" 
+        placeholder="Password" 
+        value={password} 
+        onChange={(e) => setPassword(e.target.value)} 
+      />
+      <button onClick={handleLogin}>Login</button>
       {error && <p>{error}</p>}
     </div>
   );
