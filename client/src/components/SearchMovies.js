@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../App.css'; // Lägg till en CSS-fil för styling
+import '../App.css'; 
 
 const SearchMovies = () => {
   const [query, setQuery] = useState('');
