@@ -17,7 +17,8 @@ const Login = ({ onLoginSuccess }) => {
   };
 
   return (
-    <div>
+    
+      <div className="auth-container">
       <h2>Login</h2>
       <input 
         type="email" 

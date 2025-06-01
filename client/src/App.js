@@ -4,6 +4,7 @@ import Login from '../src/components/Login';
 import Register from '../src/components/Register';
 import SearchMovies from '../src/components/SearchMovies';
 import Favorites from '../src/components/Favorites';
+import '../src/App.css'; 
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem('token'));
