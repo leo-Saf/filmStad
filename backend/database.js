@@ -2,9 +2,7 @@
 import admin from 'firebase-admin';
 
 // Importerar service account JSON för autentisering i Firebase
-import serviceAccount from '/Users/gabrielcarlstoftsoderstrom/Desktop/Filmstad-key/filmstad-bc402-firebase-adminsdk-fbsvc-1cc46a8e10.json' assert { type: 'json' };
-
-// Initialiserar Firebase Admin med hjälp av service-kontot och ställer in URL för databasen
+import serviceAccount from 'C:/Users/negi1/Projects/GitHub/filmStad/backend/filmstad-bc402-firebase-adminsdk-fbsvc-1cc46a8e10.json';// Initialiserar Firebase Admin med hjälp av service-kontot och ställer in URL för databasen
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount), // autentisering via certifikat
   databaseURL: 'https://filmstad-bc402-default-rtdb.firebaseio.com' // Anger databasens URL
