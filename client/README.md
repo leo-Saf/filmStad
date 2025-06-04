@@ -10,25 +10,6 @@ FilmStad är en komplett webbaserad filmapp där användare kan:
 
 ---
 
-## 📁 Projektstruktur
-
-backend/
-├── server.js          # Servern
-├── database.js       # Firebase-funktioner
-
-frontend/
-├── src/
-│   ├── components/
-│   │   ├── Login.js
-│   │   ├── Register.js
-│   │   ├── SearchMovies.js
-│   │   ├──Favorites.css
-│   │   └── Favorites.js
-│   ├── App.js
-│   └── App.css
-
-
----
 
 ## 🧰 Teknologier
 
