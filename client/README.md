@@ -1,70 +1,132 @@
-# Getting Started with Create React App
+# 🎬 FilmStad – Fullstack Filmapp med React, Node.js, Firebase och TMDb
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+FilmStad är en komplett webbaserad filmapp där användare kan:
 
-## Available Scripts
+- 🔍 Söka filmer via TMDb
+- 📺 Se trailers via YouTube
+- ✅ Registrera & logga in med e-post och lösenord
+- ⭐ Lägga till favoritfilmer med betyg
+- ❌ Ta bort favoriter
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📁 Projektstruktur
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+backend/
+├── server.js          # Servern
+├── database.js       # Firebase-funktioner
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+frontend/
+├── src/
+│   ├── components/
+│   │   ├── Login.js
+│   │   ├── Register.js
+│   │   ├── SearchMovies.js
+│   │   ├──Favorites.css
+│   │   └── Favorites.js
+│   ├── App.js
+│   └── App.css
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🧰 Teknologier
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend:** React, Axios, React Router
+- **Backend:** Express.js, Firebase Firestore, bcrypt, JWT, node-fetch
+- **APIer:** TMDb, YouTube Data API v3
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Kom igång – Snabbstart
 
-### `npm run eject`
+### 1. Klona repot och installera allt
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone <repo-url>
+cd filmstad
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Installera beroenden för backend
+cd backend
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Installera beroenden för frontend
+cd ../client
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ⚙️ Backend – Inställningar
 
-## Learn More
+### 🔐 Skapa och placera din Firebase-nyckel
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Gå till [Firebase Console](https://console.firebase.google.com)
+2. Skapa ett nytt projekt
+3. Gå till **Project Settings > Service Accounts**
+4. Klicka **"Generate new private key"**
+5. Spara JSON-filen som:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+backend/filmstad-key/serviceAccountKey.json
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 🔑 Lägg till YouTube API-nyckel
 
-### Analyzing the Bundle Size
+I `backend/server.js`, byt ut din nyckelrad till din riktiga YouTube Data API-nyckel:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```js
+const YOUTUBE_API_KEY = 'DIN_YOUTUBE_API_NYCKEL';
+```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 🏁 Starta backend-servern
 
-### Advanced Configuration
+Kör följande kommandon:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+cd backend
+npm start
+```
 
-### Deployment
+Servern startar på:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+http://localhost:3000/
+```
 
-### `npm run build` fails to minify
+## 🌐 Frontend – Starta klienten
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+cd frontend
+npm start
+```
+
+Frontend körs på [http://localhost:3001](http://localhost:3001)
+
+---
+
+## 🔒 Funktioner
+
+- **Register & Login** – via `/register` och `/login` endpoints
+- **JWT-authentication** – alla skyddade operationer kräver en token
+- **Sökfilmer** – hämtas via TMDb
+- **Trailerlänkar** – via YouTube Data API
+- **Favoriter** – lägg till och ta bort filmer med betyg
+
+---
+
+## 🛠 Extra beroenden
+
+Backend använder:
+
+- `node-fetch` – om du kör Node <18
+- `bcrypt` – för lösenordshashning
+- `jsonwebtoken` – för JWT-tokens
+
+Om `fetch` inte fungerar i din Node-version, installera:
+```bash
+npm install node-fetch
+```
+
+---
