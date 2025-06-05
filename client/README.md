@@ -58,16 +58,6 @@ backend/filmstad-key/serviceAccountKey.json
 
 ---
 
-### 🔑 Lägg till YouTube API-nyckel
-
-I `backend/server.js`, byt ut din nyckelrad till din riktiga YouTube Data API-nyckel:
-
-```js
-const YOUTUBE_API_KEY = 'DIN_YOUTUBE_API_NYCKEL';
-```
-
----
-
 ### 🏁 Starta backend-servern
 
 Kör följande kommandon:
