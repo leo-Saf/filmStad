@@ -30,10 +30,17 @@ cd filmstad
 # Installera beroenden för backend
 cd backend
 npm install
+npm install express bcrypt cors jsonwebtoken firebase-admin node-fetch
+npm install bcrypt@5.1.1 cors@2.8.5 express@4.21.2 firebase-admin@13.0.2 jsonwebtoken@9.0.2 node-fetch@3.3.2
+
+
 
 # Installera beroenden för frontend
 cd ../client
 npm install
+npm install react@^19.0.0 react-dom@^19.0.0 react-router-dom@^7.1.3 axios@^1.7.9 react-scripts@5.0.1 web-vitals@^4.2.4 cra-template@1.2.0
+npm install --save-dev @babel/plugin-proposal-private-property-in-object@^7.21.11
+
 
 ## ⚙️ Backend – Inställningar
 
