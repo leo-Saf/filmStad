@@ -11,7 +11,7 @@ import cors from 'cors';
 const app = express(); // Skapar en Express-applikation
 const PORT = 3000; // Anger portnumret för servern
 const JWT_SECRET = 'your_jwt_secret'; // En hemlig nyckel för att signera och verifiera JWT-token
-const YOUTUBE_API_KEY = 'AIzaSyChYiKzIRedPNd5Uzzd-VeFSoRtNs_MZ8Y';
+const YOUTUBE_API_KEY = 'AIzaSyBnbqDT14XIJPcJV7aTxzUCSRE1CewfWSA';
 
 // Tillåt förfrågningar från localhost:3001
 app.use(cors({

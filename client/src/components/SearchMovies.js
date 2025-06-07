@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../App.css'; 
+import '../styles/search.css';
 
 const SearchMovies = () => {
   const [query, setQuery] = useState('');
@@ -25,7 +25,7 @@ const SearchMovies = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:3000/favorites', {
+      await axios.post('http://localhost:3000/favorites', {
         token,
         movie: { ...movie, rating },
       });
@@ -38,62 +38,72 @@ const SearchMovies = () => {
   return (
     <div className="search-container">
       <h2>Search Movies</h2>
-      <div className="search-bar">
+      <form className="search-form"
+        onSubmit={(e) => {
+          e.preventDefault(); // förhindrar sidladdning
+          handleSearch();
+        }}
+      >
         <input
           type="text"
+          className="form-control w-auto"
           placeholder="Search for movies"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button onClick={handleSearch}>Search</button>
-      </div>
+        <button type="submit" className="btn btn-primary">
+          Search
+        </button>
+      </form>
 
       {error && <p className="error-message">{error}</p>}
 
       <div className="movie-grid">
-        {movies.map((movie) => (
-          <div key={movie.id} className="movie-card">
-            <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={movie.title}
-              className="movie-poster"
-            />
-            <div className="movie-info">
-              <h3>{movie.title}</h3>
-              <p>{movie.overview.slice(0, 100)}...</p>
-              {movie.trailer && (
-                <a
-                  href={movie.trailer.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="trailer-link"
-                >
-                  Watch Trailer
-                </a>
-                
-              )}
-              <div className="rating-container">
-                <label htmlFor={`rating-${movie.id}`}>Rating:</label>
-                <select id={`rating-${movie.id}`} className="rating-select">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-                <button
-                  onClick={() => {
-                    const rating = document.getElementById(`rating-${movie.id}`).value;
-                    handleAddToFavorites(movie, rating);
-                  }}
-                  className="favorite-button"
-                >
-                  Add to Favorites
-                </button>
+        {movies.map((movie) => {
+          console.log('DEBUG TRAILER:', movie.title, movie.trailer);
+          return (
+            <div key={movie.id} className="movie-card">
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt={movie.title}
+                className="movie-poster"
+              />
+              <div className="movie-info">
+                <h3>{movie.title}</h3>
+                <p>{movie.overview.slice(0, 100)}...</p>
+                {movie.trailer && (
+                  <a
+                    href={movie.trailer.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="trailer-link"
+                  >
+                    Watch Trailer
+                  </a>
+                )}
+                <div className="rating-container">
+                  <label htmlFor={`rating-${movie.id}`}>Rating:</label>
+                  <select id={`rating-${movie.id}`} className="rating-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                  <button
+                    onClick={() => {
+                      const rating = document.getElementById(`rating-${movie.id}`).value;
+                      handleAddToFavorites(movie, rating);
+                    }}
+                    className="favorite-button"
+                  >
+                    Add to Favorites
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
