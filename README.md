@@ -109,13 +109,13 @@ npm install node-fetch
 
 ---
 
-## Val av ramverk
+# Val av ramverk
 
 React är ett JavaScript-bibliotek som används för att skapa användargränssnitt och är mycket uppskattat av utvecklare.  React bygger applikationer med komponenter som kan återanvändas. Detta gör det möjligt för oss att dela upp koden i mindre delar, vilket gör det lättare att hantera, testa och underhålla.Som komponenter i projektet används MovieCard och Favorites för att hantera en filmlista och favoritfilmer. Det är enkelt att få hjälp och hitta lösningar på problem med Reacts stora och aktiva community. Dessutom är det många tredjepartsverktyg och bibliotek som fungerar bra med React. React uppdaterar endast de delar av användargränssnittet som har ändrats eftersom den använder en virtuell DOM (Document Object Model). Som ett resultat förbättras applikationens prestanda.
 
 Nackdelar med React är att den kräver en förståelse av idéer som state, props och komponentlivscykler, vilket kan vara svårt för nybörjare.  De som är vana vid att skriva enbart HTML och JavaScript separat kan hitta det förvirrande eftersom React använder JSX.
 
-Jämförelse med andra ramverk/bibliotek:
+## Jämförelse med andra ramverk/bibliotek:
 
 Vue.js är ett progressivt JavaScript-ramverk som fokuserar på att skapa deklarativa användargränssnitt. Det är enkelt att integrera i nuvarande applikationer och kräver inte mycket utbildning för nybörjare. Jämfört med React och Angular har Vue en mycket mer förlåtande inlärningskurva. Dess syntax är lik HTML och JavaScript, vilket gör det lättare för utvecklare som inte är bekanta med nya JavaScript-koncept.
 Klar dokumentation: Vues utmärkta dokumentation gör funktionerna lätta att förstå och implementera snabbt. Vues inbyggda reaktivitet gör det enkelt att hålla användargränssnittet och data synkroniserade.
