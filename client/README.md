@@ -108,3 +108,22 @@ npm install node-fetch
 ```
 
 ---
+
+## Val av ramverk
+
+React är ett JavaScript-bibliotek som används för att skapa användargränssnitt och är mycket uppskattat av utvecklare.  React bygger applikationer med komponenter som kan återanvändas. Detta gör det möjligt för oss att dela upp koden i mindre delar, vilket gör det lättare att hantera, testa och underhålla.Som komponenter i projektet används MovieCard och Favorites för att hantera en filmlista och favoritfilmer. Det är enkelt att få hjälp och hitta lösningar på problem med Reacts stora och aktiva community. Dessutom är det många tredjepartsverktyg och bibliotek som fungerar bra med React. React uppdaterar endast de delar av användargränssnittet som har ändrats eftersom den använder en virtuell DOM (Document Object Model). Som ett resultat förbättras applikationens prestanda.
+
+Nackdelar med React är att den kräver en förståelse av idéer som state, props och komponentlivscykler, vilket kan vara svårt för nybörjare.  De som är vana vid att skriva enbart HTML och JavaScript separat kan hitta det förvirrande eftersom React använder JSX.
+
+Jämförelse med andra ramverk/bibliotek:
+
+Vue.js är ett progressivt JavaScript-ramverk som fokuserar på att skapa deklarativa användargränssnitt. Det är enkelt att integrera i nuvarande applikationer och kräver inte mycket utbildning för nybörjare. Jämfört med React och Angular har Vue en mycket mer förlåtande inlärningskurva. Dess syntax är lik HTML och JavaScript, vilket gör det lättare för utvecklare som inte är bekanta med nya JavaScript-koncept.
+Klar dokumentation: Vues utmärkta dokumentation gör funktionerna lätta att förstå och implementera snabbt. Vues inbyggda reaktivitet gör det enkelt att hålla användargränssnittet och data synkroniserade.
+Även om Vue har utvecklats snabbt, är det fortfarande mindre känt än React och saknar mer community-stöd och tredjepartsbibliotek.Det kan vara svårare att hitta jobb eller support för Vue i större projekt eftersom React och Angular används mer i stora företagsapplikationer.
+
+Angular erbjuder ett brett utbud av verktyg för applikationsutveckling, vilket kan vara fördelaktigt för större projekt. Att hantera och testa komponenter och tjänster är enklare med Angular, som har ett inbyggt system för dependency injection.Angulars hårdare modulära struktur kan vara fördelaktig för stora program med många team som arbetar på olika delar av systemet. Angulars inlärningskurva är mindre brant än React och Vue. Det finns många idéer att förstå, och det tar mer tid och energi att lära sig dem. Angular är ofta mer komplext än React och Vue eftersom det är ett fullt utrustat ramverk. Detta kan påverka applikationens prestanda, särskilt för mindre projekt.
+
+Vi valde React för detta projekt eftersom komponentbaserad struktur och lätt att integrera externa API
+gjorde det lätt att implementera funktioner som att hämta filmdata och hantera användarens favoriter. Samt att vi redan har jobbat med det i tidigare projekt, vilket var lättare för oss att förstå konceptet. Dessutom  ett stort ekosystem och community som gör det enklare att hitta hjälp och bibliotek. Vi övervägde också Vue och Angular, men valde React för dess flexibilitet, storhet i ekosystemet och stöd för tredjepartsbibliotek som underlättar integrationen med externa API och backend-servrar. 
+
+---
