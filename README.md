@@ -84,7 +84,7 @@ http://localhost:3000/
 ## Frontend – Starta klienten
 
 ```bash
-cd frontend
+cd client
 npm start
 ```
 
