@@ -2,16 +2,16 @@
 
 FilmStad är en komplett webbaserad filmapp där användare kan:
 
-- 🔍 Söka filmer via TMDb
-- 📺 Se trailers via YouTube
-- ✅ Registrera & logga in med e-post och lösenord
-- ⭐ Lägga till favoritfilmer med betyg
-- ❌ Ta bort favoriter
+-  Söka filmer via TMDb
+-  Se trailers via YouTube
+-  Registrera & logga in med e-post och lösenord
+-  Lägga till favoritfilmer med betyg
+-  Ta bort favoriter
 
 ---
 
 
-## 🧰 Teknologier
+##  Teknologier
 
 - **Frontend:** React, Axios, React Router
 - **Backend:** Express.js, Firebase Firestore, bcrypt, JWT, node-fetch
@@ -19,7 +19,7 @@ FilmStad är en komplett webbaserad filmapp där användare kan:
 
 ---
 
-## 🚀 Kom igång – Snabbstart
+##  Kom igång – Snabbstart
 
 ### 1. Klona repot och installera allt
 
@@ -42,9 +42,9 @@ npm install react@^19.0.0 react-dom@^19.0.0 react-router-dom@^7.1.3 axios@^1.7.9
 npm install --save-dev @babel/plugin-proposal-private-property-in-object@^7.21.11
 
 
-## ⚙️ Backend – Inställningar
+##  Backend – Inställningar
 
-### 🔐 Skapa och placera din Firebase-nyckel
+###  Skapa och placera din Firebase-nyckel
 
 1. Gå till [Firebase Console](https://console.firebase.google.com)
 2. Skapa ett nytt projekt
@@ -58,7 +58,7 @@ backend/filmstad-key/serviceAccountKey.json
 
 ---
 
-### 🏁 Starta backend-servern
+###  Starta backend-servern
 
 Kör följande kommandon:
 
@@ -73,7 +73,7 @@ Servern startar på:
 http://localhost:3000/
 ```
 
-## 🌐 Frontend – Starta klienten
+## Frontend – Starta klienten
 
 ```bash
 cd frontend
@@ -84,7 +84,7 @@ Frontend körs på [http://localhost:3001](http://localhost:3001)
 
 ---
 
-## 🔒 Funktioner
+##  Funktioner
 
 - **Register & Login** – via `/register` och `/login` endpoints
 - **JWT-authentication** – alla skyddade operationer kräver en token
@@ -127,3 +127,9 @@ Vi valde React för detta projekt eftersom komponentbaserad struktur och lätt a
 gjorde det lätt att implementera funktioner som att hämta filmdata och hantera användarens favoriter. Samt att vi redan har jobbat med det i tidigare projekt, vilket var lättare för oss att förstå konceptet. Dessutom  ett stort ekosystem och community som gör det enklare att hitta hjälp och bibliotek. Vi övervägde också Vue och Angular, men valde React för dess flexibilitet, storhet i ekosystemet och stöd för tredjepartsbibliotek som underlättar integrationen med externa API och backend-servrar. 
 
 ---
+referenser:
+Google Firebase. Cloud Firestore. Firebase. https://firebase.google.com/docs/firestore/
+
+LogRocket (2023). "Why choose Axios over fetch". https://blog.logrocket.com/
+
+Stack Overflow. (2024). Stack Overflow Developer Survey 2024: Most popular technologies. https://survey.stackoverflow.co/2024/technology
