@@ -104,7 +104,7 @@ Frontend körs på [http://localhost:3001](http://localhost:3001)
 
 ---
 
-## 🛠 Extra beroenden
+## Extra beroenden
 
 Backend använder:
 
