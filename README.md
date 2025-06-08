@@ -1,4 +1,4 @@
-# 🎬 FilmStad – Fullstack Filmapp med React, Node.js, Firebase och TMDb
+8# 🎬 FilmStad – Fullstack Filmapp med React, Node.js, Firebase och TMDb
 
 FilmStad är en komplett webbaserad filmapp där användare kan:
 
@@ -129,3 +129,10 @@ React var det självklara valet för frontend eftersom det har en stor community
 gjorde det lätt att implementera funktioner som att hämta filmdata och hantera användarens favoriter. Samt att vi redan har jobbat med det i tidigare projekt, vilket var lättare för oss att förstå konceptet. Dessutom  ett stort ekosystem och community som gör det enklare att hitta hjälp och bibliotek. Vi övervägde också Vue och Angular, men valde React för dess flexibilitet, storhet i ekosystemet och stöd för tredjepartsbibliotek som underlättar integrationen med externa API och backend-servrar. 
 
 ---
+References 
+
+Google Firebase. Cloud Firestore. Firebase. https://firebase.google.com/docs/firestore/
+
+LogRocket (2023). "Why choose Axios over fetch". https://blog.logrocket.com/
+
+Stack Overflow. (2024). Stack Overflow Developer Survey 2024: Most popular technologies. https://survey.stackoverflow.co/2024/technology
