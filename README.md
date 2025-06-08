@@ -46,15 +46,23 @@ npm install --save-dev @babel/plugin-proposal-private-property-in-object@^7.21.1
 
 ###  Skapa och placera din Firebase-nyckel
 
-1. Gå till [Firebase Console](https://console.firebase.google.com)
-2. Skapa ett nytt projekt
-3. Gå till **Project Settings > Service Accounts**
-4. Klicka **"Generate new private key"**
-5. Spara JSON-filen som:
+### 🔐 Lägg till din Firebase-nyckel
 
-```bash
-backend/filmstad-key/serviceAccountKey.json
-```
+För att backend ska fungera krävs en Firebase service account-nyckel.
+
+1. Gå till [Firebase Console](https://console.firebase.google.com)
+2. Skapa ett nytt projekt eller använd ett befintligt
+3. Gå till **Project Settings → Service Accounts**
+4. Klicka på **"Generate new private key"** och spara `.json`-filen på din dator
+
+Sedan:
+
+- Öppna `backend/database.js`
+- Byt ut raden där `serviceAccount` importeras, så att den pekar på **din lokala sökväg**
+
+```js
+import serviceAccount from '/Users/ditt-användarnamn/SÖKVÄG-TILL-DIN-NYCKEL.json' assert { type: "json" };
+
 
 ---
 
@@ -130,19 +138,9 @@ React var det självklara valet för frontend eftersom det har en stor community
 gjorde det lätt att implementera funktioner som att hämta filmdata och hantera användarens favoriter. Samt att vi redan har jobbat med det i tidigare projekt, vilket var lättare för oss att förstå konceptet. Dessutom  ett stort ekosystem och community som gör det enklare att hitta hjälp och bibliotek. Vi övervägde också Vue och Angular, men valde React för dess flexibilitet, storhet i ekosystemet och stöd för tredjepartsbibliotek som underlättar integrationen med externa API och backend-servrar. 
 
 ---
-<<<<<<< HEAD
 referenser:
-=======
-References 
-
->>>>>>> 13b9010b46721354f1889c19022ca1f67267ab02
 Google Firebase. Cloud Firestore. Firebase. https://firebase.google.com/docs/firestore/
 
 LogRocket (2023). "Why choose Axios over fetch". https://blog.logrocket.com/
 
-<<<<<<< HEAD
-=======
-Meta. Learn React. React. https://react.dev/learn
-
->>>>>>> 13b9010b46721354f1889c19022ca1f67267ab02
 Stack Overflow. (2024). Stack Overflow Developer Survey 2024: Most popular technologies. https://survey.stackoverflow.co/2024/technology
