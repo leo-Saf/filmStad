@@ -54,6 +54,8 @@ För att backend ska fungera krävs en Firebase service account-nyckel.
 2. Skapa ett nytt projekt eller använd ett befintligt
 3. Gå till **Project Settings → Service Accounts**
 4. Klicka på **"Generate new private key"** och spara `.json`-filen på din dator
+5. Spara den som:
+
 
 Sedan:
 
@@ -84,7 +86,7 @@ http://localhost:3000/
 ## Frontend – Starta klienten
 
 ```bash
-cd frontend
+cd client
 npm start
 ```
 
