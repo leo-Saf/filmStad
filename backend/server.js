@@ -4,14 +4,15 @@ import bcrypt from 'bcrypt'; // Bcrypt för att hasha och jämföra lösenord
 import jwt from 'jsonwebtoken'; // JSON Web Token för autentisering
 import fetch from 'node-fetch'; // För att göra HTTP-förfrågningar till externa API:er (nödvändigt om Node.js är <18, men i version 18+ finns fetch globalt)
 import { addUser, getUser, addFavorite, getFavorites, removeFavorite } from './database.js'; // Import av funktioner som interagerar med Firestore
-
+import dotenv from 'dotenv';
 import cors from 'cors';
 
+dotenv.config();
 
 const app = express(); // Skapar en Express-applikation
 const PORT = 3000; // Anger portnumret för servern
 const JWT_SECRET = 'your_jwt_secret'; // En hemlig nyckel för att signera och verifiera JWT-token
-const YOUTUBE_API_KEY = 'AIzaSyBnbqDT14XIJPcJV7aTxzUCSRE1CewfWSA';
+const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
 // Tillåt förfrågningar från localhost:3001
 app.use(cors({
