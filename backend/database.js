@@ -2,7 +2,7 @@
 import admin from 'firebase-admin';
 
 // Importerar service account JSON för autentisering i Firebase
-import serviceAccount from '/Users/gabrielcarlstoftsoderstrom/Desktop/Filmstad-key/filmstad-bc402-firebase-adminsdk-fbsvc-1cc46a8e10.json' assert { type: "json" };
+import serviceAccount from '/Users/hasansafiah/Desktop/Filmstad-key/filmstad-bc402-firebase-adminsdk-fbsvc-1cc46a8e10.json' assert { type: "json" };
 
 // Initialiserar Firebase Admin med hjälp av service-kontot och ställer in URL för databasen
 admin.initializeApp({

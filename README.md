@@ -28,14 +28,66 @@ git clone <repo-url>
 cd filmstad
 
 # Installera beroenden för backend
+1. Initiera pakethantering och skapa en package.json med rätt fält:
+
 cd backend
+npm init -y
+npm pkg set type=module
+npm pkg set main=database.js
+npm pkg set scripts.start "node server.js"
+
+
+2. Installera alla beroenden inklusive dotenv:
+npm install express@4.21.2 bcrypt@5.1.1 cors@2.8.5 jsonwebtoken@9.0.2 firebase-admin@13.0.2 node-fetch@3.3.2 dotenv@16.5.0
+
+Alternativ B: Manuell installation (om du redan har package.json)
+
+1. Gå in i backend-mappen:
+
+cd backend
+
+2. Installera beroenden utifrån befintlig package.json och extra paket:
+
 npm install
 npm install express bcrypt cors jsonwebtoken firebase-admin node-fetch
-npm install bcrypt@5.1.1 cors@2.8.5 express@4.21.2 firebase-admin@13.0.2 jsonwebtoken@9.0.2 node-fetch@3.3.2
+npm install bcrypt@5.1.1 cors@2.8.5 express@4.21.2 firebase-admin@13.0.2 jsonwebtoken@9.0.2 node-fetch@3.3.2 dotenv@^16.5.0
+
+Skapa .env-filen
+
+cat <<EOF > .env
+YOUTUBE_API_KEY=din_youtube_api_nyckel_här
+EOF
+
+npm start
+Servern körs på: http://localhost:3000
 
 
+Alternativ A: Automatisk package.json + npm install
 
-# Installera beroenden för frontend
+1. Gå in i client-mappen:
+
+cd client
+
+2. Initiera package.json:
+
+npm init -y
+npm pkg set private true
+npm pkg set scripts.start "react-scripts start"
+npm pkg set scripts.build "react-scripts build"
+npm pkg set scripts.test "react-scripts test"
+npm pkg set scripts.eject "react-scripts eject"
+npm pkg set proxy "http://localhost:3000"
+
+3. Installera alla dependencies:
+
+npm install axios cors cra-template react react-dom react-router-dom react-scripts web-vitals
+
+4. Installera dev-dependency:
+
+npm install --save-dev @babel/plugin-proposal-private-property-in-object
+
+Alternativ B: Manuell installation (om du redan har package.json)
+
 cd ../client
 npm install
 npm install react@^19.0.0 react-dom@^19.0.0 react-router-dom@^7.1.3 axios@^1.7.9 react-scripts@5.0.1 web-vitals@^4.2.4 cra-template@1.2.0
