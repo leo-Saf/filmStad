@@ -26,6 +26,8 @@ FilmStad är en komplett webbaserad filmapp där användare kan:
 ```bash
 git clone <repo-url>
 cd filmstad
+node.js 
+npm 
 
 # Installera beroenden för backend
 1. Initiera pakethantering och skapa en package.json med rätt fält:
@@ -34,7 +36,7 @@ cd backend
 npm init -y
 npm pkg set type=module
 npm pkg set main=database.js
-npm pkg set scripts.start "node server.js"
+npm pkg set scripts.start="node server.js"
 
 
 2. Installera alla beroenden inklusive dotenv:
@@ -58,7 +60,8 @@ cat <<EOF > .env
 YOUTUBE_API_KEY=din_youtube_api_nyckel_här
 EOF
 
-npm start
+
+npm start  //innan du startar se till att du har fixat jason filen rätt// om du har node v22  ska du använda import attributes med with { type: 'json' }
 Servern körs på: http://localhost:3000
 
 
@@ -71,12 +74,12 @@ cd client
 2. Initiera package.json:
 
 npm init -y
-npm pkg set private true
-npm pkg set scripts.start "react-scripts start"
-npm pkg set scripts.build "react-scripts build"
-npm pkg set scripts.test "react-scripts test"
-npm pkg set scripts.eject "react-scripts eject"
-npm pkg set proxy "http://localhost:3000"
+npm pkg set private=true
+npm pkg set scripts.start="react-scripts start"
+npm pkg set scripts.build="react-scripts build"
+npm pkg set scripts.test="react-scripts test"
+npm pkg set scripts.eject="react-scripts eject"
+npm pkg set proxy="http://localhost:3000"
 
 3. Installera alla dependencies:
 
