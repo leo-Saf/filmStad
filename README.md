@@ -96,6 +96,11 @@ npm install
 npm install react@^19.0.0 react-dom@^19.0.0 react-router-dom@^7.1.3 axios@^1.7.9 react-scripts@5.0.1 web-vitals@^4.2.4 cra-template@1.2.0
 npm install --save-dev @babel/plugin-proposal-private-property-in-object@^7.21.11
 
+Obs: Om du får fel om react-scripts eller konstiga Babel-fel:
+CRA 5 funkar bäst med React 18. Kör då:
+npm install react@18.3.1 react-dom@18.3.1 --save-exact
+npm install react-scripts@5.0.1 react-router-dom@6 axios web-vitals
+npm start
 
 ##  Backend – Inställningar
 
